@@ -11,8 +11,9 @@ class WaveLength : public Scalar
 {
 public:
 	WaveLength(double value = 0) : Scalar(value) {}
-	operator Frequency() {};
+	operator Frequency();
 };
 
 WaveLength operator "" m(long double _value);
 ostream& operator << (ostream& out, const WaveLength& obj);
+istream& operator >> (istream& in, WaveLength& obj);

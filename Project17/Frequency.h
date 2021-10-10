@@ -11,8 +11,9 @@ class Frequency : public Scalar
 {
 public:
 	Frequency(double value = 0) : Scalar(value) {}
-	operator Energy(){}
+	operator Energy();
 };
 
 Frequency operator "" Hz(long double _value);
 ostream& operator << (ostream& out, const Frequency& obj);
+istream& operator >> (istream& in, Frequency& obj);

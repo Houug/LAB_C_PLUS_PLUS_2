@@ -10,12 +10,23 @@ Mass operator "" kg(long double _value)
 	return Mass(_value);
 }
 
+Mass::operator Energy()
+{
+	return Energy(this->value * pow(299792458, 2));
+}
+
 ostream& operator << (ostream& out, const Mass& obj)
 {
 	return out << obj.get_value() << "kg";
 }
+void Mass::f(int) {
+	std::cout << "I'm from mass";
+}
 
-Mass::operator Energy()
+istream& operator >> (istream& input, Mass& obj)
 {
-	return Energy(this->value * pow(299792458, 2));
+	double value_;
+	input >> value_;
+	obj.set_value(value_);
+	return input;
 }

@@ -15,3 +15,4 @@ public:
 
 Power operator "" W(long double _value);
 ostream& operator << (ostream& out, const Power& obj);
+istream& operator >> (istream& in, Power& obj);

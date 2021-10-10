@@ -15,3 +15,4 @@ public:
 
 Temperature operator "" K(long double _value);
 ostream& operator << (ostream& out, const Temperature& obj);
+istream& operator >> (istream& in, Temperature& obj);

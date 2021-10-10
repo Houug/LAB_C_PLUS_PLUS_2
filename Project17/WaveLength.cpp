@@ -19,3 +19,11 @@ WaveLength::operator Frequency()
 {
 	return Frequency(pow(299792458, 2) / this->value);
 }
+
+istream& operator >> (istream& input, WaveLength& obj)
+{
+	double value_;
+	input >> value_;
+	obj.set_value(value_);
+	return input;
+}

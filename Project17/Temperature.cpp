@@ -15,3 +15,11 @@ ostream& operator << (ostream& out, const Temperature& obj)
 {
 	return out << obj.get_value() << "K";
 }
+
+istream& operator >> (istream& input, Temperature& obj)
+{
+	double value_;
+	input >> value_;
+	obj.set_value(value_);
+	return input;
+}

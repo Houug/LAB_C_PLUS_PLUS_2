@@ -15,3 +15,11 @@ ostream& operator << (ostream& out, const Power& obj)
 {
 	return out << obj.get_value() << "W";
 }
+
+istream& operator >> (istream& input, Power& obj)
+{
+	double value_;
+	input >> value_;
+	obj.set_value(value_);
+	return input;
+}
