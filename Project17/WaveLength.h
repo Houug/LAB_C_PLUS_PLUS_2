@@ -11,6 +11,7 @@ class WaveLength : public Scalar
 {
 public:
 	WaveLength(double value = 0) : Scalar(value) {}
+	WaveLength(const Frequency& obj) : Scalar(pow(299792458, 2) / value) {}
 	operator Frequency();
 };
 

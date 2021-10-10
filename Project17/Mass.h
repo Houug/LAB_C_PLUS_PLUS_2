@@ -5,20 +5,15 @@
 #include <iostream>
 #include <compare>
 #include <cmath>
-#include <string>
 
 using namespace std;
 
 class Mass : public Scalar
 {
-private:
-	std::string s;
 public:
 	Mass(double value = 0) : Scalar(value) {}
+	Mass(const Energy& obj) : Scalar(obj.get_value() / pow(299792458, 2)) {}
 	operator Energy();
-private:
-	void f(int);
-
 };
 
 

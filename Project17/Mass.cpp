@@ -19,9 +19,6 @@ ostream& operator << (ostream& out, const Mass& obj)
 {
 	return out << obj.get_value() << "kg";
 }
-void Mass::f(int) {
-	std::cout << "I'm from mass";
-}
 
 istream& operator >> (istream& input, Mass& obj)
 {

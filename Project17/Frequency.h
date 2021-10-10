@@ -11,6 +11,7 @@ class Frequency : public Scalar
 {
 public:
 	Frequency(double value = 0) : Scalar(value) {}
+	Frequency(const Energy& obj) : Scalar(value / (6.62607015 * pow(10, -34))) {}
 	operator Energy();
 };
 

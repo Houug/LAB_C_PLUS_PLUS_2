@@ -16,6 +16,7 @@ public:
 
 	Energy& operator-=(const Energy& _value);
 	Energy operator-(const Energy& obj) const;
+	
 };
 
 Energy operator "" J(long double _value);

@@ -27,7 +27,6 @@ public:
 
 	virtual Scalar& operator-=(const Scalar& _value);
 	virtual Scalar operator-(const Scalar& obj) const;
-
 	partial_ordering operator<=> (const Scalar& obj) const;
 
 	double get_value() const;
