@@ -8,12 +8,13 @@ void Scalar::_init(double _value)
 }
 
 // конструктор
-Scalar::Scalar(double _value) : value(_value)
+Scalar::Scalar(double _value, string _lit) : value(_value), lit(_lit)
 {
 }
 
+
 // конструктор копирования
-Scalar::Scalar(const Scalar& obj) : value(obj.value)
+Scalar::Scalar(const Scalar& obj) : value(obj.value), lit(obj.lit)
 {
 }
 
@@ -62,6 +63,11 @@ Scalar Scalar::operator-(const Scalar& obj) const
 	return Scalar(*this) -= obj;
 }
 
+partial_ordering Scalar::operator<=>(const Scalar& obj) const
+{
+	return value <=> obj.value;
+}
+
 // геттер
 double Scalar::get_value() const {
 	return value;
@@ -71,11 +77,11 @@ void Scalar::set_value(double _value){
 	value = _value;
 }
 
-// оператор трехстороннего сравнения
-partial_ordering Scalar::operator<=> (const Scalar& obj) const
-{
-	return value <=> obj.value;
-}
 ostream& operator << (ostream& out, const Scalar& obj) {
-	return out << obj.get_value();
+	return out << obj.get_value() << obj.lit;
+}
+
+istream& operator>>(istream& in, Scalar& obj)
+{
+	return in;
 }

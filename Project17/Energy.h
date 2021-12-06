@@ -8,6 +8,7 @@ using namespace std;
 
 class Energy : public Scalar
 {
+	const string lit = "J";
 public:
 	Energy(double value = 0) : Scalar(value) {}
 
@@ -20,5 +21,3 @@ public:
 };
 
 Energy operator "" J(long double _value);
-ostream& operator << (ostream& out, const Energy& obj);
-istream& operator >> (istream& in, Energy& obj);

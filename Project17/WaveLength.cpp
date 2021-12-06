@@ -17,7 +17,7 @@ ostream& operator << (ostream& out, const WaveLength& obj)
 
 WaveLength::operator Frequency()
 {
-	return Frequency(pow(299792458, 2) / this->value);
+	return Frequency(pow(299792458, 2) / this->get_value());
 }
 
 istream& operator >> (istream& input, WaveLength& obj)

@@ -13,7 +13,7 @@ Frequency operator "" Hz(long double _value)
 
 Frequency::operator Energy()
 {
-	return Energy(this->value * 6.62607015 * pow(10, -34));
+	return Energy(this->get_value() * 6.62607015 * pow(10, -34));
 }
 
 ostream& operator << (ostream& out, const Frequency& obj)

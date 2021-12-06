@@ -25,7 +25,9 @@ istream& operator >> (istream& input, Energy& obj)
 
 Energy& Energy::operator+=(const Energy& obj)
 {
-	this->value += obj.value;
+	auto temp = obj.get_value();
+	temp += obj.get_value();
+	this->set_value(temp);
 	return *this;
 }
 
@@ -37,7 +39,9 @@ Energy Energy::operator+(const Energy& obj) const
 
 Energy& Energy::operator-=(const Energy& obj)
 {
-	this->value -= obj.value;
+	auto temp = obj.get_value();
+	temp -= obj.get_value();
+	this->set_value(temp);
 	return *this;
 }
 
